@@ -116,6 +116,11 @@ No, because Git is very efficient in data storage, it compresses file contents a
 to show files in staging area -> git ls-files
 to delete files recursive -> git rm --cached -r fileName
 
+Git Objects:-
+1. Commits
+2. Blobs (files)
+3. Trees (Directories)
+4. Tags
 ## CHEAT SHEAT
 
 Creating Snapshots--\*
