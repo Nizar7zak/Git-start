@@ -146,62 +146,93 @@ No, because Git is very efficient in data storage, it compresses file contents a
 
 #### Staging files-_
 > git add file1.js # Stages a single file
+> 
 > git add file1.js file2.js # Stages multiple files
+> 
 > git add _.js # Stages with a pattern
+> 
 > git add . # Stages the current directory and all its content
 
-Viewing the status-\*
-git status # Full status
-git status -s # Short status
 
-Committing the staged files-\*
-git commit -m “Message” # Commits with a one-line message
-git commit # Opens the default editor to type a long message
+#### Viewing the status
+> git status # Full status
+> 
+> git status -s # Short status
+> 
 
-Skipping the staging area-\*
-git commit -am “Message”
+#### Committing the staged files
+> git commit -m “Message” # Commits with a one-line message
+> 
+> git commit # Opens the default editor to type a long message
 
-Removing files-\*
-git rm file1.js # Removes from working directory and staging area
-git rm --cached file1.js # Removes from staging area only
 
-Renaming or moving files-\*
-git mv file1.js file1.txt
+#### Skipping the staging area
+> git commit -am “Message”
+> 
 
-Viewing the staged/unstaged changes-\*
-git diff # Shows unstaged changes
-git diff --staged # Shows staged changes
-git diff --cached # Same as the above
+#### Removing files
+> git rm file1.js # Removes from working directory and staging area
+> 
+> git rm --cached file1.js # Removes from staging area only
+> 
 
-Viewing the history-\*
-git log # Full history
-git log --oneline # Summary
-git log --reverse # Lists the commits from the oldest to the newest
+#### Renaming or moving files
+> git mv file1.js file1.txt
+> 
 
-Viewing a commit-\*
-git show 921a2ff # Shows the given commit
-git show HEAD # Shows the last commit
-git show HEAD~2 # Two steps before the last commit
-git show HEAD:file.js # Shows the version of file.js stored in the last commit
-git ls-tree HEAD~1 # Shows all changes files in this commit
+#### Viewing the staged/unstaged changes
+> git diff # Shows unstaged changes
+> 
+> git diff --staged # Shows staged changes
+> 
+> git diff --cached # Same as the above
+> 
 
-Unstaging files (undoing git add)-\*
-git restore --staged file.js # Copies the last version of file.js from repo to index
+#### Viewing the history
+> git log # Full history
+> 
+> git log --oneline # Summary
+> 
+> git log --reverse # Lists the commits from the oldest to the newest
 
-Discarding local changes-\*
-git restore file.js # Copies file.js from index to working directory
-git restore file1.js file2.js # Restores multiple files in working directory
-git restore . # Discards all local changes (except untracked files)
-git clean -fd # Removes all untracked files
+#### Viewing a commit
 
-Restoring an earlier version of a file-\*
-git restore --source=HEAD~2 file.js
+> git show 921a2ff # Shows the given commit
+> 
+> git show HEAD # Shows the last commit
+> 
+> git show HEAD~2 # Two steps before the last commit
+> 
+> git show HEAD:file.js # Shows the version of file.js stored in the last commit
+> 
+> git ls-tree HEAD~1 # Shows all changes files in this commit
+> 
 
-Browsing History--\*
+#### Unstaging files (undoing git add)
+> git restore --staged file.js # Copies the last version of file.js from repo to index
+> 
 
-Viewing the history-\*
-git log --stat # Shows the list of modified files
-git log --patch # Shows the actual changes (patches)
+#### Discarding local changes
+> git restore file.js # Copies file.js from index to working directory
+> 
+> git restore file1.js file2.js # Restores multiple files in working directory
+> 
+> git restore . # Discards all local changes (except untracked files)
+> 
+> git clean -fd # Removes all untracked files
+> 
+
+#### Restoring an earlier version of a file
+> git restore --source=HEAD~2 file.js
+> 
+
+### Browsing History
+
+#### Viewing the history
+> git log --stat # Shows the list of modified files
+> 
+> git log --patch # Shows the actual changes (patches)
+> 
 
 Filtering the history-\*
 git log -3 # Shows the last 3 entries
