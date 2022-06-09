@@ -88,6 +88,11 @@ that means if we don't handle end of lines properly we're going to run into some
 git config --global core.autocrlf true/input
 if you are on windows you shuold set it to true, if you are on Linux you shuold set it to input.
 
+Visual Diff tool 
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+in terminal we can use (git difftool) command to see the changes diff
+
 Get Help!
 let's say you want to learn more about the config command, you can simply google (git config) and see full documentation about it, and you can see the same content by type( git config --help) on terminal.
 press space to go to the next page and q to exit page.
