@@ -1,31 +1,32 @@
-"# Git-start"
+# Git-start
 
-What is Git? and why it is so popular?
-git is the most popular version control system in the world, a version control system records the changes made to our code over time in a special database call Repository.
+### What is Git? and why it is so popular?
+Git is the most popular version control system in the world, a version control system records the changes made to our code over time in a special database call Repository.
 
-we can look at our project history and see who has made what changes when and why, and if we screw something up we can easily revert our project back to an earlier state.
+We can look at our project history and see who has made what changes when and why, and if we screw something up we can easily revert our project back to an earlier state.
 
-Without VCS we'll have to constantly store copies of entire project in various folders, like this =>
-v1.0.0
-v1.0.1
-v1.0.2
-v1.0.3
-and so on...
-this is very slow and does not scale at all especially if multiple people have to work on the same project.
+Without VCS we'll have to constantly store copies of entire project in various folders, like this
+
+> v1.0.0
+> v1.0.1
+> v1.0.2
+> v1.0.3
+> and so on..
+
+This is very slow and does not scale at all especially if multiple people have to work on the same project.
 you would have to contantly toss around the latest code via email or some other mechanisms, and then manually merge the changes.
 
-with a VCS we can track our project history and work togther.
-
-VCS fall into two categories:-
+**with a VCS we can track our project history and work togther.**
+### VCS fall into two categories:-
 
 1. Centralized :-
-   all team members connect to a central server to get the latest copy of the code, and to share thier changes with others. subversion and microsoft team foundation server are examples of centralized version control system.
+   All team members connect to a central server to get the latest copy of the code, and to share thier changes with others. subversion and microsoft team foundation server are examples of centralized version control system.
    the problem with centralized architecture is the single point of failure, if the server goes offline we cannot collaborate or save snapshots of our project. so we have to wait until the server comes back online.
 
 2. Distributed
-   in distributed system we don't have these problems, every team member has a copy of the project with its history on thier machine, so we can save snapshots of our project locally on our machine, if the central server is offline we can synchronize our work directly with others. Git and Mercurial are examples of distributed VCS, out off all Git is the most popular VCS in the world.
+   In distributed system we don't have these problems, every team member has a copy of the project with its history on thier machine, so we can save snapshots of our project locally on our machine, if the central server is offline we can synchronize our work directly with others. Git and Mercurial are examples of distributed VCS, out off all Git is the most popular VCS in the world.
 
-WHY Git?
+### WHY Git?
 
 1. Free.
 2. Open Source.
@@ -35,107 +36,119 @@ WHY Git?
 
 So Git is almost everywhere, more than 90% of software projects in the world use Git, that's why almost every job description for software developer metnions Git.
 
-USING Git:-
+### USING Git:-
 
 1. The command line.
 2. Code editors & IDEs
 3. Graphical User Interfaces (GitKraken)
 
-we can use in the command line, so we open a terminal or command prompt window to execute Git commands, this is the fateset and sometim, now if you don't like the command line, well! you're in luck because most modern code editors & IDEs have built-in support for basic Git features.
+> we can use in the command line, so we open a terminal or command prompt window to execute Git commands, this is the fateset and sometim, now if you don't like the command line, well! you're in luck because most modern code editors & IDEs have built-in support for basic Git features.
 
-Command line or GUI?
+### Command line or GUI?
 YOU SHOULD USE THE RIGHT TOOL FOR THE JOB.
 
-Why Command Line?
+#### Why Command Line?
 
 1. GUI tools have limitations.
 2. GUI tools are not always available.
 
-INSTALLING Git :-
-check any version I have => git --version
-installing Git => on windows after install git you must install git BASH to emulate linux cmd
+### INSTALLING Git :-
+* Check any version I have 
+> git --version
 
-Configuring Git:-
+* Installing Git
+> on windows after install git you must install git BASH to emulate linux cmd
+
+### Configuring Git:-
 
 1. name
 2. email
 3. default editor
 4. line ending
 
-we can sepcify these configuration at three diffrent levels:-
+We can sepcify these configuration at three diffrent levels:-
 
-1. SYSTEM:- setting here apply yo all users of the current computer (All users)
-2. GLOBAL:- all repositories of the Current user
-3. LOCAL:- The Current repository
+1. **SYSTEM:-** setting here apply yo all users of the current computer (All users)
+2. **GLOBAL:-** all repositories of the Current user
+3. **LOCAL:-** The Current repository
 
 In the terminal window we type:-
+```
 git config --global user.name "type your name here"
 git config --global user.email yourEmail
 git config --global core.editor "code --wait"
-with wait flag we tell the terminal window to wait until we close the new vs code instance.
-git config --global -e
-this will open our default editor to edit all the global settings.
+```
+* With wait flag we tell the terminal window to wait until we close the new vs code instance.
 
-next we're going to configure how git should handle end of lines, this is a very important setting that a lot of peoples miss.
+> git config --global -e
+* This will open our default editor to edit all the global settings.
+
+Next we're going to configure how git should handle end of lines, this is a very important setting that a lot of peoples miss.
 On windows end of lines are marked with two special characters:-
 
 1. Carrigae Return (\r)
 2. Line Feed (\n)
    On macOS/Linux system end of lines are indicated with line feed (\n)
 
-that means if we don't handle end of lines properly we're going to run into some weird issues down the road, to prevent this, we have to configure a property called (core.autocrlf) which is short for carriage return line feed.
+That means if we don't handle end of lines properly we're going to run into some weird issues down the road, to prevent this, we have to configure a property called (core.autocrlf) which is short for carriage return line feed.
 
-git config --global core.autocrlf true/input
+> git config --global core.autocrlf true/input
+> 
 if you are on windows you shuold set it to true, if you are on Linux you shuold set it to input.
 
-Visual Diff tool 
-git config --global diff.tool vscode
-git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
-in terminal we can use (git difftool) command to see the changes diff
+### Visual Diff tool 
+> git config --global diff.tool vscode
+> git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
-Get Help!
+* In terminal we can use (git difftool) command to see diff.
+
+### Get Help!
 let's say you want to learn more about the config command, you can simply google (git config) and see full documentation about it, and you can see the same content by type( git config --help) on terminal.
 press space to go to the next page and q to exit page.
 
 to get a short summary of this command just type in terminal
-git config -h
+> git config -h
 
-Git WORKFLOW
-what we do on a daily basis when using git?
+### Git WORKFLOW
+#### What we do on a daily basis when using git?
 imagine we have a project directory and git repo which is actually a hidden sub dicectory in our project directory, every day as part of working on various tasks, we modify one or more files, when our project reaches a state we want to record, we commit those changes into our repo.
 
 creating a commit is like taking a snapshot of our project, in Git we have a special area or special intermidate step, that does not exist in most other version control systems, is's called the Staging Area, it's essentially what we're proposing for the next commit or the next snapshot, so when we're done making changes, we add the modified files to the staging area, review our changes and if everything is good then we'll make a commit. the proposed snapshot will get permanently stored in our repo.
-Staging area:- allows us to review our work before recording a snapshot, if some of the changes should not be recorded as part of the next snapshot, we can unstage them and commit them as part of another snapshot, that's the basic git workflow now.
 
-COMMIT :-
+### Staging area:- 
+> allows us to review our work before recording a snapshot, if some of the changes should not be recorded as part of the next snapshot, we can unstage them and commit them as part of another snapshot, that's the basic git workflow now.
+
+### COMMIT :-
 each commit contains a unique identifier that gets generated by Git, it's like a revision number. each commit also contains information about what was changes, by who, when, as well as complete snapshot of our project at the time it was created, so we can quickly restore the project to an earlier snapshot without having to compute the changes.
 
-save all content -> waste a lot of space???
+### save all content --> waste a lot of space?!
 No, because Git is very efficient in data storage, it compresses file contents and does not store duplicate content, do you want to know how? at this time we should just know each commits conatins a complete snapshot of our project.
 
-to show files in staging area -> git ls-files
-to delete files recursive -> git rm --cached -r fileName
+* to show files in staging area -> git ls-files
+* to delete files recursive -> git rm --cached -r fileName
 
-Git Objects:-
+### Just to Know Git Object contains:-
 1. Commits
 2. Blobs (files)
 3. Trees (Directories)
 4. Tags
+
+
 ## CHEAT SHEAT
 
-Creating Snapshots--\*
+### Creating Snapshots
 
-Initializing a repository-\*
-git init
+#### Initializing a repository
+> git init
 
-Remove .git-\*
-rm -rf .git
+#### Remove .git
+> rm -rf .git
 
-Staging files-_
-git add file1.js # Stages a single file
-git add file1.js file2.js # Stages multiple files
-git add _.js # Stages with a pattern
-git add . # Stages the current directory and all its content
+#### Staging files-_
+> git add file1.js # Stages a single file
+> git add file1.js file2.js # Stages multiple files
+> git add _.js # Stages with a pattern
+> git add . # Stages the current directory and all its content
 
 Viewing the status-\*
 git status # Full status
