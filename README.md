@@ -118,7 +118,7 @@ to get a short summary of this command just type in terminal
 Imagine we have a project directory and git repo which is actually a hidden sub dicectory in our project directory, every day as part of working on various tasks, we modify one or more files, when our project reaches a state we want to record, we commit those changes into our repo.
 
 Creating a commit is like taking a snapshot of our project, in Git we have a special area or special intermidate step, that does not exist in most other version control systems, it's called the Staging Area, it's essentially what we're proposing for the next commit or the next snapshot, so when we're done making changes, we add the modified files to the staging area, review our changes and if everything is good then we'll make a commit. the proposed snapshot will get permanently stored in our repo.
-
+ 
 ### Staging area:- 
 > Allows us to review our work before recording a snapshot, if some of the changes should not be recorded as part of the next snapshot, we can unstage them and commit them as part of another snapshot, that's the basic git workflow now.
 
