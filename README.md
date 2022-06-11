@@ -16,7 +16,7 @@ Without VCS we'll have to constantly store copies of entire project in various f
 > v1.0.3  and so on..
 
 This is very slow and does not scale at all especially if multiple people have to work on the same project.
-you would have to contantly toss around the latest code via email or some other mechanisms, and then manually merge the changes.
+you would have to constantly toss around the latest code via email or some other mechanisms, and then manually merge the changes.
 
 **with a VCS we can track our project history and work togther.**
 ### VCS fall into two categories:-
@@ -25,7 +25,7 @@ you would have to contantly toss around the latest code via email or some other 
    All team members connect to a central server to get the latest copy of the code, and to share thier changes with others. subversion and microsoft team foundation server are examples of centralized version control system.
    the problem with centralized architecture is the single point of failure, if the server goes offline we cannot collaborate or save snapshots of our project. so we have to wait until the server comes back online.
 
-2. Distributed
+2. Distributed :-
    In distributed system we don't have these problems, every team member has a copy of the project with its history on thier machine, so we can save snapshots of our project locally on our machine, if the central server is offline we can synchronize our work directly with others. Git and Mercurial are examples of distributed VCS, out off all Git is the most popular VCS in the world.
 
 ### WHY Git?
@@ -44,7 +44,7 @@ So Git is almost everywhere, more than 90% of software projects in the world use
 2. Code editors & IDEs
 3. Graphical User Interfaces (GitKraken)
 
-> we can use in the command line, so we open a terminal or command prompt window to execute Git commands, this is the fateset and sometim, now if you don't like the command line, well! you're in luck because most modern code editors & IDEs have built-in support for basic Git features.
+> we can use in the command line, so we open a terminal or command prompt window to execute Git commands, this is the fateset, now if you don't like the command line, well! you're in luck because most modern code editors & IDEs have built-in support for basic Git features.
 
 ### Command line or GUI?
 YOU SHOULD USE THE RIGHT TOOL FOR THE JOB.
@@ -86,11 +86,12 @@ git config --global core.editor "code --wait"
 * This will open our default editor to edit all the global settings.
 
 Next we're going to configure how git should handle end of lines, this is a very important setting that a lot of peoples miss.
-On windows end of lines are marked with two special characters:-
 
+> On windows end of lines are marked with two special characters:-
 1. Carrigae Return (\r)
 2. Line Feed (\n)
-   On macOS/Linux system end of lines are indicated with line feed (\n)
+
+> On macOS/Linux system end of lines are indicated with line feed (\n)
 
 That means if we don't handle end of lines properly we're going to run into some weird issues down the road, to prevent this, we have to configure a property called (core.autocrlf) which is short for carriage return line feed.
 
@@ -100,6 +101,7 @@ if you are on windows you shuold set it to true, if you are on Linux you shuold 
 
 ### Visual Diff tool 
 > git config --global diff.tool vscode
+>
 > git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
 * In terminal we can use (git difftool) command to see diff.
@@ -113,21 +115,21 @@ to get a short summary of this command just type in terminal
 
 ### Git WORKFLOW
 #### What we do on a daily basis when using git?
-imagine we have a project directory and git repo which is actually a hidden sub dicectory in our project directory, every day as part of working on various tasks, we modify one or more files, when our project reaches a state we want to record, we commit those changes into our repo.
+Imagine we have a project directory and git repo which is actually a hidden sub dicectory in our project directory, every day as part of working on various tasks, we modify one or more files, when our project reaches a state we want to record, we commit those changes into our repo.
 
-creating a commit is like taking a snapshot of our project, in Git we have a special area or special intermidate step, that does not exist in most other version control systems, is's called the Staging Area, it's essentially what we're proposing for the next commit or the next snapshot, so when we're done making changes, we add the modified files to the staging area, review our changes and if everything is good then we'll make a commit. the proposed snapshot will get permanently stored in our repo.
+Creating a commit is like taking a snapshot of our project, in Git we have a special area or special intermidate step, that does not exist in most other version control systems, it's called the Staging Area, it's essentially what we're proposing for the next commit or the next snapshot, so when we're done making changes, we add the modified files to the staging area, review our changes and if everything is good then we'll make a commit. the proposed snapshot will get permanently stored in our repo.
 
 ### Staging area:- 
-> allows us to review our work before recording a snapshot, if some of the changes should not be recorded as part of the next snapshot, we can unstage them and commit them as part of another snapshot, that's the basic git workflow now.
+> Allows us to review our work before recording a snapshot, if some of the changes should not be recorded as part of the next snapshot, we can unstage them and commit them as part of another snapshot, that's the basic git workflow now.
 
 ### COMMIT :-
-each commit contains a unique identifier that gets generated by Git, it's like a revision number. each commit also contains information about what was changes, by who, when, as well as complete snapshot of our project at the time it was created, so we can quickly restore the project to an earlier snapshot without having to compute the changes.
+Each commit contains a unique identifier that gets generated by Git, it's like a revision number. each commit also contains information about what was changes, by who, when, as well as complete snapshot of our project at the time it was created, so we can quickly restore the project to an earlier snapshot without having to compute the changes.
 
-### save all content --> waste a lot of space?!
+### SAVE ALL CONTENT --> WASTE A LOT OF SPACE?!
 No, because Git is very efficient in data storage, it compresses file contents and does not store duplicate content, do you want to know how? at this time we should just know each commits conatins a complete snapshot of our project.
 
-* to show files in staging area -> git ls-files
-* to delete files recursive -> git rm --cached -r fileName
+* git ls-files => show files in staging area 
+* git rm --cached -r fileName => delete files recursive 
 
 ### Just to Know Git Object contains:-
 1. Commits
