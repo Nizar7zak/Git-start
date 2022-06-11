@@ -13,9 +13,7 @@ Without VCS we'll have to constantly store copies of entire project in various f
 
 > v1.0.2
 
-> v1.0.3
-
-> and so on..
+> v1.0.3  and so on..
 
 This is very slow and does not scale at all especially if multiple people have to work on the same project.
 you would have to contantly toss around the latest code via email or some other mechanisms, and then manually merge the changes.
