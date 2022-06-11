@@ -153,7 +153,7 @@ No, because Git is very efficient in data storage, it compresses file contents a
 > 
 > git add file1.js file2.js # Stages multiple files
 > 
-> git add _.js # Stages with a pattern
+> git add *.js # Stages with a pattern
 > 
 > git add . # Stages the current directory and all its content
 
