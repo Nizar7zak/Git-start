@@ -8,9 +8,13 @@ We can look at our project history and see who has made what changes when and wh
 Without VCS we'll have to constantly store copies of entire project in various folders, like this
 
 > v1.0.0
+
 > v1.0.1
+
 > v1.0.2
+
 > v1.0.3
+
 > and so on..
 
 This is very slow and does not scale at all especially if multiple people have to work on the same project.
